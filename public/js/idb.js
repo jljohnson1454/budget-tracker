@@ -41,7 +41,7 @@ function uploadTransaction() {
 
     const transactionObjectStore = transaction.objectStore('new_transaction');
 
-    const getAll = pizzaObjectStore.getAll();
+    const getAll = transactionObjectStore.getAll();
 
 
     getAll.onsuccess = function () {
