@@ -16,7 +16,7 @@ request.onsuccess = function (event) {
     db = event.target.result;
 
     if (navigator.onLine) {
-
+        uploadTransaction();
         //  uploadBudget();
     }
 };
@@ -37,7 +37,7 @@ function saveRecord(record) {
 
 function uploadTransaction() {
 
-    const transaction = db.transaction(['new_pizza'], 'readwrite');
+    const transaction = db.transaction(['new_transaction'], 'readwrite');
 
     const transactionObjectStore = transaction.objectStore('new_transaction');
 
@@ -47,7 +47,7 @@ function uploadTransaction() {
     getAll.onsuccess = function () {
 
         if (getAll.result.length > 0) {
-            fetch('/api/transactions', {
+            fetch('/api/transaction', {
                 method: 'POST',
                 body: JSON.stringify(getAll.result),
                 headers: {
@@ -62,7 +62,7 @@ function uploadTransaction() {
                     }
                     // open one more transaction
                     const transaction = db.transaction(['new_transaction'], 'readwrite');
-                    // access the new_pizza object store
+                    // access the new_transaction object store
                     const transactionObjectStore = transaction.objectStore('new_transaction');
                     // clear all items in your store
                     transactionObjectStore.clear();
