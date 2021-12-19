@@ -1,7 +1,7 @@
 {
     "name": "Budget Tracker",
     "short_name": "Transactions",
-    "description": "An app that allows you to add and subtract for every transaction.",
+    "description": "An app that allows you to add and subtract every transaction.",
     "background_color": "#ffffff",
     "them_color": "#ffffff",
     "start_url": ".",
